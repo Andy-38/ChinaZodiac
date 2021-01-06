@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,9 +14,15 @@
         <scene sceneID="MtD-LE-BUB">
             <objects>
                 <navigationController id="28b-yL-yfE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7DQ-2R-nrb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7DQ-2R-nrb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K9F-dA-nCm"/>
@@ -34,14 +41,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="p81-TF-rQx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnimalCell" id="lgE-na-6X9">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgE-na-6X9" id="Ck2-uO-Smk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -51,21 +58,47 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="JFe-fk-BSu"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите год или символ из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hR-EV-yKY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="34"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zog-Wp-fBd">
+                                <rect key="frame" x="389.5" y="88" width="24.5" height="34.5"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFindButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yib-YG-SSq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Zog-Wp-fBd" firstAttribute="height" secondItem="5hR-EV-yKY" secondAttribute="height" multiplier="1.01333" id="6eu-Kv-lrN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5hR-EV-yKY" secondAttribute="trailing" id="B71-RV-Vt3"/>
+                            <constraint firstItem="5hR-EV-yKY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HdX-BN-JG1"/>
+                            <constraint firstItem="Zog-Wp-fBd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Icp-Lf-pzX"/>
                             <constraint firstItem="p81-TF-rQx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M8u-TA-dkr"/>
-                            <constraint firstItem="p81-TF-rQx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nD9-OO-hr4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p81-TF-rQx" secondAttribute="bottom" id="ofH-yH-yXR"/>
+                            <constraint firstItem="Zog-Wp-fBd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="MHS-Z5-udQ"/>
+                            <constraint firstItem="p81-TF-rQx" firstAttribute="top" secondItem="5hR-EV-yKY" secondAttribute="bottom" id="QDz-Cw-1x2"/>
+                            <constraint firstItem="5hR-EV-yKY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bDh-Y3-sMl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p81-TF-rQx" secondAttribute="bottom" id="jcX-pM-hdO"/>
+                            <constraint firstItem="Zog-Wp-fBd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nGa-aQ-0KS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p81-TF-rQx" secondAttribute="trailing" id="t4X-dI-ekj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oIX-YN-En7"/>
+                    <connections>
+                        <outlet property="findButton" destination="Zog-Wp-fBd" id="mUC-Tz-NSW"/>
+                        <outlet property="yearEdit" destination="5hR-EV-yKY" id="mC6-CO-bIt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="58"/>
+            <point key="canvasLocation" x="-823.1884057971015" y="57.589285714285708"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="DE2-L3-C0p">
@@ -110,6 +143,7 @@
     </scenes>
     <resources>
         <image name="1" width="437" height="437"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
