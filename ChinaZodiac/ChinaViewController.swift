@@ -21,7 +21,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animalsZodiac.count // количество элементов массива players
+        return animalsZodiac.count // количество элементов массива 
         // сколько раз вызывается функция следующая
     }
     
