@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		A1A229EC25A4B40C00CF8B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */; };
 		A1A229EE25A4B40C00CF8B99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */; };
-		A1A229F025A4B40C00CF8B99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A229EF25A4B40C00CF8B99 /* ViewController.swift */; };
 		A1A229F325A4B40C00CF8B99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A229F125A4B40C00CF8B99 /* Main.storyboard */; };
 		A1A229F525A4B40D00CF8B99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A229F425A4B40D00CF8B99 /* Assets.xcassets */; };
 		A1A229F825A4B40D00CF8B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A229F625A4B40D00CF8B99 /* LaunchScreen.storyboard */; };
+		A1A22A0325A4B4AD00CF8B99 /* ChinaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A22A0225A4B4AD00CF8B99 /* ChinaViewController.swift */; };
+		A1D0C8C125A592E200EA4047 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0C8C025A592E200EA4047 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1A229E825A4B40C00CF8B99 /* ChinaZodiac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinaZodiac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1A229EF25A4B40C00CF8B99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1A229F225A4B40C00CF8B99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1A229F425A4B40D00CF8B99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1A229F725A4B40D00CF8B99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1A229F925A4B40D00CF8B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A22A0225A4B4AD00CF8B99 /* ChinaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaViewController.swift; sourceTree = "<group>"; };
+		A1D0C8C025A592E200EA4047 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */,
+				A1A22A0225A4B4AD00CF8B99 /* ChinaViewController.swift */,
+				A1D0C8C025A592E200EA4047 /* DetailViewController.swift */,
 				A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */,
-				A1A229EF25A4B40C00CF8B99 /* ViewController.swift */,
 				A1A229F125A4B40C00CF8B99 /* Main.storyboard */,
 				A1A229F425A4B40D00CF8B99 /* Assets.xcassets */,
 				A1A229F625A4B40D00CF8B99 /* LaunchScreen.storyboard */,
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A229F025A4B40C00CF8B99 /* ViewController.swift in Sources */,
 				A1A229EC25A4B40C00CF8B99 /* AppDelegate.swift in Sources */,
 				A1A229EE25A4B40C00CF8B99 /* SceneDelegate.swift in Sources */,
+				A1A22A0325A4B4AD00CF8B99 /* ChinaViewController.swift in Sources */,
+				A1D0C8C125A592E200EA4047 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TURJQ23G7Y;
 				INFOPLIST_FILE = ChinaZodiac/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TURJQ23G7Y;
 				INFOPLIST_FILE = ChinaZodiac/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
