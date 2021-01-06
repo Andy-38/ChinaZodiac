@@ -27,6 +27,8 @@ class DetailViewController: UIViewController {
     var animal : String = "" // название животного
     var number: Int = 0 // порядковый номер в списке
     let firstYear: Int = 2016 // первый ближайщий год обезьяны
+    var year = 2016 // центральный год на экране
+    
     @IBOutlet weak var yearLabel: UILabel!
     
     @IBOutlet weak var yearImageView: UIImageView!
@@ -44,7 +46,12 @@ class DetailViewController: UIViewController {
         yearImageView.layer.cornerRadius = sizeOfImage / 2 // скругляем углы
         yearImageView.layer.borderWidth = 1 // толщина рамки
         yearImageView.layer.borderColor = UIColor.black.cgColor // цвет рамки
-        yearLabel.text = String(firstYear + number - 1)
+        //year = firstYear + number - 1
+        yearLabel.text = String(year) // основной год
+        //let width = 100
+        //let height = 20
+        //yearLabel.frame = CGRect(x: Int(view.frame.midX) - width/2, y: Int(view.frame.maxY) - height - 100, width: width, height: height)
+        //yearLabel.frame.
   
     }
     

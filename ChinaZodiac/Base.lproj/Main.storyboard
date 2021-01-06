@@ -77,18 +77,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-nT-1Yp">
                                 <rect key="frame" x="-11.5" y="64" width="437" height="437"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJL-U5-PKc">
-                                <rect key="frame" x="173.5" y="561" width="67" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yearLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJL-U5-PKc">
+                                <rect key="frame" x="148" y="664.5" width="118" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-Pn-GBl">
+                                <rect key="frame" x="0.0" y="501" width="414" height="361"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f8j-bz-I5N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="f8j-bz-I5N" firstAttribute="bottom" secondItem="gn4-Pn-GBl" secondAttribute="bottom" id="4py-tN-oS5"/>
                             <constraint firstItem="vfM-nT-1Yp" firstAttribute="top" secondItem="f8j-bz-I5N" secondAttribute="top" constant="20" id="HTQ-tM-JwM"/>
-                            <constraint firstItem="hJL-U5-PKc" firstAttribute="top" secondItem="vfM-nT-1Yp" secondAttribute="bottom" constant="60" id="YkG-XA-L0Q"/>
+                            <constraint firstItem="gn4-Pn-GBl" firstAttribute="top" secondItem="vfM-nT-1Yp" secondAttribute="bottom" id="QWT-C1-Nia"/>
+                            <constraint firstItem="gn4-Pn-GBl" firstAttribute="leading" secondItem="f8j-bz-I5N" secondAttribute="leading" id="QhU-TO-LXi"/>
+                            <constraint firstItem="hJL-U5-PKc" firstAttribute="centerY" secondItem="gn4-Pn-GBl" secondAttribute="centerY" id="fdK-MQ-GE7"/>
+                            <constraint firstItem="f8j-bz-I5N" firstAttribute="trailing" secondItem="gn4-Pn-GBl" secondAttribute="trailing" id="gmG-GI-hLk"/>
                             <constraint firstItem="hJL-U5-PKc" firstAttribute="centerX" secondItem="idV-e1-ch6" secondAttribute="centerX" id="il4-5t-B4z"/>
                             <constraint firstItem="vfM-nT-1Yp" firstAttribute="centerX" secondItem="f8j-bz-I5N" secondAttribute="centerX" id="tsb-m9-ABl"/>
                         </constraints>

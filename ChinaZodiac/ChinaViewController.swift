@@ -21,7 +21,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animalsZodiac.count // количество элементов массива 
+        return animalsZodiac.count // количество элементов массива
         // сколько раз вызывается функция следующая
     }
     
@@ -59,6 +59,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         detailViewController.animal = animal // передаем его на новый экран
         detailViewController.number = indexPath.row+1
+        detailViewController.year = detailViewController.firstYear + indexPath.row
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
 //        detailViewController.image = cell.imageView?.image
 //
