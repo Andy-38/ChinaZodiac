@@ -24,9 +24,10 @@ extension UIImage { // дополнительная функция для изм
 
 class DetailViewController: UIViewController {
 
-    var animal : String = ""
-    var number: Int = 0
-    //var image: UIImage?
+    var animal : String = "" // название животного
+    var number: Int = 0 // порядковый номер в списке
+    let firstYear: Int = 2016 // первый ближайщий год обезьяны
+    @IBOutlet weak var yearLabel: UILabel!
     
     @IBOutlet weak var yearImageView: UIImageView!
     
@@ -35,16 +36,15 @@ class DetailViewController: UIViewController {
         navigationItem.title = animal
         navigationController?.navigationBar.prefersLargeTitles = true // большие заголовки
         let imageName = "\(number).png"
-        let image = UIImage(named: imageName)
-        let sizeOfImage = view.frame.midX
-        yearImageView.image = image?.resize(sizeOfImage,sizeOfImage)
+        let image = UIImage(named: imageName) // грузим картинку из файла
+        let sizeOfImage = view.frame.midX // размер картинки - половина экрана
+        yearImageView.image = image?.resize(sizeOfImage,sizeOfImage) // изменяем размер
         
-        //yearImageView.image = yearImageView.image?.resize(200,200)
-        
-        //yearImageView.image?.size.
-//        positionLabel.text = player?.position
-//        heightLabel.text = player?.height
-//        teamButton.setTitle(player?.team.fullName, for: .normal)
+        yearImageView.clipsToBounds = true // обрезаем картинку согласно слою Layer
+        yearImageView.layer.cornerRadius = sizeOfImage / 2 // скругляем углы
+        yearImageView.layer.borderWidth = 1 // толщина рамки
+        yearImageView.layer.borderColor = UIColor.black.cgColor // цвет рамки
+        yearLabel.text = String(firstYear + number - 1)
   
     }
     

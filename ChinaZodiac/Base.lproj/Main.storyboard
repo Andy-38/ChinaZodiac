@@ -73,21 +73,29 @@
                 <viewController storyboardIdentifier="YearDetail" id="DSE-lx-Vva" customClass="DetailViewController" customModule="ChinaZodiac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idV-e1-ch6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-nT-1Yp">
                                 <rect key="frame" x="-11.5" y="64" width="437" height="437"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJL-U5-PKc">
+                                <rect key="frame" x="173.5" y="561" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f8j-bz-I5N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vfM-nT-1Yp" firstAttribute="top" secondItem="f8j-bz-I5N" secondAttribute="top" constant="20" id="HTQ-tM-JwM"/>
+                            <constraint firstItem="hJL-U5-PKc" firstAttribute="top" secondItem="vfM-nT-1Yp" secondAttribute="bottom" constant="60" id="YkG-XA-L0Q"/>
+                            <constraint firstItem="hJL-U5-PKc" firstAttribute="centerX" secondItem="idV-e1-ch6" secondAttribute="centerX" id="il4-5t-B4z"/>
                             <constraint firstItem="vfM-nT-1Yp" firstAttribute="centerX" secondItem="f8j-bz-I5N" secondAttribute="centerX" id="tsb-m9-ABl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="yearImageView" destination="vfM-nT-1Yp" id="ZIk-LP-TdR"/>
+                        <outlet property="yearLabel" destination="hJL-U5-PKc" id="eX5-FO-Zpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naH-Kv-LiW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

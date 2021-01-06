@@ -44,7 +44,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         let imageName = "\(indexPath.row+1).png" // имя картинки - порядковый номер
         let image = UIImage(named: imageName)
         cell.imageView?.image = image
-        cell.imageView?.clipsToBounds = true
+        cell.imageView?.clipsToBounds = true // обрезаем картинку согласно слою Layer
         cell.imageView?.layer.cornerRadius = 27 // скругляем углы
         cell.imageView?.layer.borderWidth = 1 // толщина рамки
         cell.imageView?.layer.borderColor = UIColor.black.cgColor // цвет рамки
