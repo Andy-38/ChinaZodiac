@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="28b-yL-yfE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gb4-uE-fkb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,10 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="aWT-hr-e4t">
+            <objects>
+                <tabBarController id="Gb4-uE-fkb" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nic-u6-kSX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="28b-yL-yfE" kind="relationship" relationship="viewControllers" id="vM1-Hk-llp"/>
+                        <segue destination="ELp-Ug-qp6" kind="relationship" relationship="viewControllers" id="MTy-gS-A2R"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sgl-n2-ekP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2609" y="415"/>
+        </scene>
+        <!--Год-->
         <scene sceneID="MtD-LE-BUB">
             <objects>
                 <navigationController id="28b-yL-yfE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Год" id="3eN-N4-leu">
+                        <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7DQ-2R-nrb">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="p81-TF-rQx">
-                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="691"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnimalCell" id="lgE-na-6X9">
@@ -140,9 +161,97 @@
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="57.589285714285708"/>
         </scene>
+        <!--Месяц-->
+        <scene sceneID="o4e-2O-R7L">
+            <objects>
+                <navigationController id="ELp-Ug-qp6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Месяц" id="1nT-0n-O30">
+                        <imageReference key="image" image="calendar.circle" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XXF-96-DTU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PG8-Sn-axZ" kind="relationship" relationship="rootViewController" id="iuv-BZ-veq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7S-LF-h1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1539" y="791"/>
+        </scene>
+        <!--Zodiac View Controller-->
+        <scene sceneID="PQz-1a-sgk">
+            <objects>
+                <viewController id="PG8-Sn-axZ" customClass="ZodiacViewController" customModule="ChinaZodiac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ww-Oj-saO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-G4-Juz">
+                                <rect key="frame" x="0.0" y="78" width="414" height="784"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ZnakCell" id="ay4-03-CEI">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ay4-03-CEI" id="1nL-uI-Whc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PG8-Sn-axZ" id="e3g-lJ-Usg"/>
+                                    <outlet property="delegate" destination="PG8-Sn-axZ" id="zqd-bQ-BvJ"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите год или символ из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-8R-8gY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="34"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-dU-72x">
+                                <rect key="frame" x="389.5" y="44" width="24.5" height="34.5"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MmQ-N3-uvP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MmQ-N3-uvP" firstAttribute="trailing" secondItem="A8E-8R-8gY" secondAttribute="trailing" id="0S4-lr-ddz"/>
+                            <constraint firstItem="eiO-dU-72x" firstAttribute="trailing" secondItem="MmQ-N3-uvP" secondAttribute="trailing" id="E6q-cb-Mer"/>
+                            <constraint firstItem="eiO-dU-72x" firstAttribute="top" secondItem="MmQ-N3-uvP" secondAttribute="top" id="UDF-jK-pfW"/>
+                            <constraint firstItem="A8E-8R-8gY" firstAttribute="top" secondItem="MmQ-N3-uvP" secondAttribute="top" id="a5d-kb-E4k"/>
+                            <constraint firstItem="HOf-G4-Juz" firstAttribute="leading" secondItem="MmQ-N3-uvP" secondAttribute="leading" id="bwh-BO-7zz"/>
+                            <constraint firstItem="HOf-G4-Juz" firstAttribute="top" secondItem="A8E-8R-8gY" secondAttribute="bottom" id="d0t-0o-pCE"/>
+                            <constraint firstItem="MmQ-N3-uvP" firstAttribute="trailing" secondItem="HOf-G4-Juz" secondAttribute="trailing" id="djj-QR-jW8"/>
+                            <constraint firstItem="eiO-dU-72x" firstAttribute="height" secondItem="A8E-8R-8gY" secondAttribute="height" multiplier="1.01333" id="dns-m8-9bO"/>
+                            <constraint firstItem="eiO-dU-72x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MmQ-N3-uvP" secondAttribute="leading" symbolic="YES" id="ib4-FS-wgO"/>
+                            <constraint firstItem="MmQ-N3-uvP" firstAttribute="bottom" secondItem="HOf-G4-Juz" secondAttribute="bottom" id="nl9-ZP-A1A"/>
+                            <constraint firstItem="A8E-8R-8gY" firstAttribute="leading" secondItem="MmQ-N3-uvP" secondAttribute="leading" id="wxN-74-IwT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1HT-gK-lw5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHw-Mk-65j" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="791"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1" width="437" height="437"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

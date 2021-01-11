@@ -14,7 +14,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var yearEdit: UITextField!
     @IBOutlet weak var findButton: UIButton!
     
-    var animalsZodiac = ["Обезьяна", "Петух", "Собака", "Свинья (Кабан)", "Крыса (Мышь)", "Бык", "Тигр", "Кролик (Кот)", "Дракон", "Змея", "Лошадь", "Коза (Овца)"]
+    let animalsZodiac = ["Обезьяна", "Петух", "Собака", "Свинья (Кабан)", "Крыса (Мышь)", "Бык", "Тигр", "Кролик (Кот)", "Дракон", "Змея", "Лошадь", "Коза (Овца)"]
     
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        // вызывается когда пользователь коснулся экрана
