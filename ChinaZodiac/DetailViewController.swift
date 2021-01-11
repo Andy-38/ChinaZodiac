@@ -46,7 +46,6 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var year = 2016 // центральный год на экране
     var years = [Int] () // массив годов для выбранного животного
     
-    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var yearImageView: UIImageView!
     @IBOutlet weak var yearPickerView: UIPickerView!
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gb4-uE-fkb">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -66,10 +66,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnimalCell" id="lgE-na-6X9">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgE-na-6X9" id="Ck2-uO-Smk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -85,7 +85,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zog-Wp-fBd">
-                                <rect key="frame" x="389.5" y="88" width="24.5" height="34.5"/>
+                                <rect key="frame" x="389.66666666666669" y="88" width="24.333333333333314" height="34.333333333333343"/>
                                 <state key="normal">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-nT-1Yp">
-                                <rect key="frame" x="-11.5" y="64" width="437" height="437"/>
+                                <rect key="frame" x="-11.666666666666657" y="64" width="437.33333333333326" height="437"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-Pn-GBl">
                                 <rect key="frame" x="0.0" y="501" width="414" height="361"/>
@@ -212,7 +212,7 @@
                                     <outlet property="delegate" destination="PG8-Sn-axZ" id="zqd-bQ-BvJ"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите год или символ из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-8R-8gY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите дату или знак из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-8R-8gY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="34"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -247,12 +247,61 @@
             </objects>
             <point key="canvasLocation" x="-823" y="791"/>
         </scene>
+        <!--Detail Zodiac View Controller-->
+        <scene sceneID="5xf-Gw-ury">
+            <objects>
+                <viewController storyboardIdentifier="MonthDetail" id="tyw-gw-0e9" customClass="DetailZodiacViewController" customModule="ChinaZodiac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcZ-Bp-zGP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="z1" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-uF-ofc">
+                                <rect key="frame" x="-63" y="64" width="540" height="540"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qyv-kC-KVd">
+                                <rect key="frame" x="0.0" y="612" width="414" height="258"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-MS-zRV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ndi-MS-zRV" firstAttribute="centerX" secondItem="qyv-kC-KVd" secondAttribute="centerX" id="08h-xf-pgB"/>
+                                    <constraint firstItem="Ndi-MS-zRV" firstAttribute="centerY" secondItem="qyv-kC-KVd" secondAttribute="centerY" id="EYk-N8-JgH"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fyT-5s-0Za"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fyT-5s-0Za" firstAttribute="trailing" secondItem="qyv-kC-KVd" secondAttribute="trailing" id="Fvc-MG-ODe"/>
+                            <constraint firstItem="GCa-uF-ofc" firstAttribute="top" secondItem="fyT-5s-0Za" secondAttribute="top" constant="20" id="KRs-Id-oda"/>
+                            <constraint firstItem="qyv-kC-KVd" firstAttribute="trailing" secondItem="fyT-5s-0Za" secondAttribute="trailing" id="PZj-3K-HSy"/>
+                            <constraint firstItem="GCa-uF-ofc" firstAttribute="centerX" secondItem="fyT-5s-0Za" secondAttribute="centerX" id="btJ-i6-ifj"/>
+                            <constraint firstItem="fyT-5s-0Za" firstAttribute="bottom" secondItem="qyv-kC-KVd" secondAttribute="bottom" id="k3L-6i-r0v"/>
+                            <constraint firstItem="qyv-kC-KVd" firstAttribute="leading" secondItem="fyT-5s-0Za" secondAttribute="leading" id="nc7-yb-VT4"/>
+                            <constraint firstItem="qyv-kC-KVd" firstAttribute="top" secondItem="GCa-uF-ofc" secondAttribute="bottom" id="qay-Yu-VF1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="Ndi-MS-zRV" id="U3b-5p-3Qn"/>
+                        <outlet property="znakImageView" destination="GCa-uF-ofc" id="awc-zf-zFA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRO-gX-hvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="791"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1" width="437" height="437"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="z1" width="540" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

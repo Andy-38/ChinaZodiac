@@ -13,7 +13,6 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
 //        @IBOutlet weak var findButton: UIButton!
         
         let znakZodiac = ["Козерог", "Водолей", "Рыбы", "Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы", "Скорпион", "Стрелец"]
-        let znakDate = ["23 декабря – 20 января", "21 января – 19 февраля", "20 февраля – 20 марта", "21 марта – 20 апреля", "21 апреля – 21 мая", "22 мая – 21 июня", "22 июня – 22 июля", "23 июля – 21 августа", "22 августа – 23 сентября", "24 сентября – 23 октября", "24 октября – 22 ноября", "23 ноября – 22 декабря"]
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -43,18 +42,17 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-//            let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            let detailZodiacViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
             
-//            let animal = znakZodiac[indexPath.row] // получаем элемент массива
+            let znak = znakZodiac[indexPath.row] // получаем элемент массива
             
-//            detailViewController.animal = animal // передаем его на новый экран
-//           detailViewController.number = indexPath.row + 1
-//            detailViewController.year = detailViewController.firstYear + indexPath.row
+            detailZodiacViewController.znak = znak // передаем его на новый экран
+            detailZodiacViewController.number = indexPath.row + 1
 
-//            view.endEditing(true) // убираем клавиатуру
+            view.endEditing(true) // убираем клавиатуру
 //            yearEdit.text = "" // обнуляем год в поле ввода
-//            navigationController?.pushViewController(detailViewController, animated: true)
+            navigationController?.pushViewController(detailZodiacViewController, animated: true)
         }
         
         
