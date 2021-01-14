@@ -83,16 +83,6 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         yearPickerView.selectRow(maxYears, inComponent: 0, animated: true) // выбираем текущий год в "барабане"
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

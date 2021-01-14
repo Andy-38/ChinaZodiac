@@ -9,9 +9,10 @@ import UIKit
 
 class ZodiacViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-//        @IBOutlet weak var yearEdit: UITextField!
-//        @IBOutlet weak var findButton: UIButton!
-        
+
+    @IBOutlet weak var znakEdit: UITextField!
+    @IBOutlet weak var findButton: UIButton!
+    
         let znakZodiac = ["Козерог", "Водолей", "Рыбы", "Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы", "Скорпион", "Стрелец"]
         
         override func viewDidLoad() {
@@ -51,27 +52,24 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
             detailZodiacViewController.number = indexPath.row + 1
 
             view.endEditing(true) // убираем клавиатуру
-//            yearEdit.text = "" // обнуляем год в поле ввода
+            znakEdit.text = "" // обнуляем знак в поле ввода
             navigationController?.pushViewController(detailZodiacViewController, animated: true)
         }
         
         
-        @IBAction func onFindButtonClick(_ sender: Any) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-//            let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
-            
-//            guard let year = Int(yearEdit.text ?? "") else {return}
-//            let numAnimal = year % 12 // узнаем номер животного для введенного года
-//            let animal = znakZodiac[numAnimal] // получаем элемент массива
-            
-//            detailViewController.animal = animal // передаем его на новый экран
-//            detailViewController.number = numAnimal + 1
-//            detailViewController.year = year
-
-//            view.endEditing(true) // убираем клавиатуру
-//            yearEdit.text = "" // обнуляем год в поле ввода
-//            navigationController?.pushViewController(detailViewController, animated: true)
-        }
+    @IBAction func onFindButtonClick(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let detailViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
         
+        let numZnak = 1
+        let znak = znakZodiac[numZnak] // узнаем нужный знак Зодиака
+        detailViewController.znak = znak // передаем его на новый экран
+        detailViewController.number = numZnak + 1
+
+        view.endEditing(true) // убираем клавиатуру
+        znakEdit.text = "" // обнуляем знак в поле ввода
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
 
     }

@@ -199,7 +199,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ZnakCell" id="ay4-03-CEI">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ay4-03-CEI" id="1nL-uI-Whc">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -223,6 +223,9 @@
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
+                                <connections>
+                                    <action selector="onFindButtonClick:" destination="PG8-Sn-axZ" eventType="touchUpInside" id="4uW-Wq-ojr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MmQ-N3-uvP"/>
@@ -242,6 +245,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1HT-gK-lw5"/>
+                    <connections>
+                        <outlet property="findButton" destination="eiO-dU-72x" id="EiX-31-SiE"/>
+                        <outlet property="znakEdit" destination="A8E-8R-8gY" id="U9n-tU-vlT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHw-Mk-65j" sceneMemberID="firstResponder"/>
             </objects>
