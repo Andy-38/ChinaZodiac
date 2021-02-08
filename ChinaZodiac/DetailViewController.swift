@@ -7,21 +7,6 @@
 
 import UIKit
 
-extension UIImage { // дополнительная функция для изменения размера изображения
-    func resize(_ width: CGFloat, _ height:CGFloat) -> UIImage? {
-        let widthRatio  = width / size.width
-        let heightRatio = height / size.height
-        let ratio = widthRatio > heightRatio ? heightRatio : widthRatio
-        let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        self.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-}
-
 class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let maxYears = 10 // максимальное количество посчитанных лет для выбранного животного в одну сторону (прошлое/будущее)
@@ -42,7 +27,6 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     var animal : String = "" // название животного
     var number: Int = 0 // порядковый номер в списке
-    let firstYear: Int = 2016 // первый ближайщий год обезьяны
     var year = 2016 // центральный год на экране
     var years = [Int] () // массив годов для выбранного животного
     
@@ -53,7 +37,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         navigationItem.title = animal
         navigationController?.navigationBar.prefersLargeTitles = true // большие заголовки
-        let imageName = "\(number).png"
+        let imageName = "\(number+1).png"
         let image = UIImage(named: imageName) // грузим картинку из файла
         let sizeOfImage = view.frame.midX // размер картинки - половина экрана
         yearImageView.image = image?.resize(sizeOfImage,sizeOfImage) // изменяем размер

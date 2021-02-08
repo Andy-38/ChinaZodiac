@@ -13,46 +13,27 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var yearEdit: UITextField!
     @IBOutlet weak var findButton: UIButton!
-    
-    let animalsZodiac = ["Обезьяна", "Петух", "Собака", "Свинья (Кабан)", "Крыса (Мышь)", "Бык", "Тигр", "Кролик (Кот)", "Дракон", "Змея", "Лошадь", "Коза (Овца)"]
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        // вызывается когда пользователь коснулся экрана
-//        super.touchesBegan(touches, with: event)
-//        view.endEditing(true) // убираем клавиатуру
-//        print(#line, #function)
-//    }
+    let zodiacModel : ZodiacModel = ZodiacModel() // модель
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Символы года"
+        navigationItem.title = zodiacModel.name // заголовок экрана
         navigationController?.navigationBar.prefersLargeTitles = true // большие заголовки
-        //yearEdit.layer.cornerRadius = 10
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animalsZodiac.count // количество элементов массива
+        return zodiacModel.animalsZodiac.count // количество элементов массива
         // сколько раз вызывается функция следующая
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // заполняем список животными
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
-        let animal = animalsZodiac[indexPath.row] // получаем элемент массива
+        let animal = zodiacModel.animalsZodiac[indexPath.row] // получаем элемент массива
         cell.textLabel?.text = animal // заголовок экрана - название животного
         cell.textLabel?.font = UIFont(name: "Palatino", size: 25) // шрифт списка
-        //cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
-                                  
-//        guard let palatino = UIFont(name: "Palatino", size: 18) else {
-//            fatalError("""
-//                Failed to load the "Palatino" font.
-//                """
-//            )
-//        }
-//        cell.textLabel?.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: palatino)
-//        cell.textLabel?.adjustsFontForContentSizeCategory = true
         
-        let imageName = "\(indexPath.row+1).png" // имя картинки - порядковый номер
+        let imageName = zodiacModel.getImageName(index: indexPath.row) // путь к картинке
         let image = UIImage(named: imageName)
         cell.imageView?.image = image
         cell.imageView?.clipsToBounds = true // обрезаем картинку согласно слою Layer
@@ -62,37 +43,34 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func showDetail(number: Int, year: Int ) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
         
-        let animal = animalsZodiac[indexPath.row] // получаем элемент массива
+        let animal = zodiacModel.animalsZodiac[number] // получаем элемент массива
         
         detailViewController.animal = animal // передаем его на новый экран
-        detailViewController.number = indexPath.row + 1
-        detailViewController.year = detailViewController.firstYear + indexPath.row
+        detailViewController.number = number
+        detailViewController.year = year
 
         view.endEditing(true) // убираем клавиатуру
         yearEdit.text = "" // обнуляем год в поле ввода
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // при выборе животного из списка - открываем детальный экран
+        let number = indexPath.row
+        let year = zodiacModel.getNearestYear(offset: indexPath.row) // узнаем ближайщий год для выбранного животного
+        showDetail(number: number, year: year)
+    }
     
-    @IBAction func onFindButtonClick(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
-        
-        guard let year = Int(yearEdit.text ?? "") else {return}
-        let numAnimal = year % 12 // узнаем номер животного для введенного года
-        let animal = animalsZodiac[numAnimal] // получаем элемент массива
-        
-        detailViewController.animal = animal // передаем его на новый экран
-        detailViewController.number = numAnimal + 1
-        detailViewController.year = year
+    
+    @IBAction func onFindButtonClick(_ sender: Any) { // поиск по году
 
-        view.endEditing(true) // убираем клавиатуру
-        yearEdit.text = "" // обнуляем год в поле ввода
-        navigationController?.pushViewController(detailViewController, animated: true)
+        guard let year = Int(yearEdit.text ?? "") else {return}
+        let numAnimal = zodiacModel.getAnimalNumByYear(year: year) // узнаем номер животного для введенного года
+        showDetail(number: numAnimal, year: year)
     }
     
 
