@@ -19,20 +19,36 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         navigationItem.title = znakZodiacModel.name // заголовок экрана
         navigationController?.navigationBar.prefersLargeTitles = true // большие заголовки
-       
-        znakEdit.inputView = datePicker // датапикер - источник данных для текстового поля
-        datePicker.datePickerMode = .date
-        let localeID = Locale.preferredLanguages.first
-        datePicker.locale = Locale(identifier: localeID!)
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
-        toolbar.setItems([doneButton], animated: true)
-        znakEdit.inputAccessoryView = toolbar
+        addDatePicker() // создаем датапикер для выбора даты
     }
     
-    @objc func doneAction() {
-        
+    func addDatePicker() { // создаем датапикер для выбора даты и цепляем его к полю ввода
+        znakEdit.inputView = datePicker   // датапикер - источник данных для текстового поля
+        datePicker.datePickerMode = .date // тип датапикера - только дата, без времени
+        if #available(iOS 14, *) {
+            // в iOS 14 корявый внешний вид пикера по умолчанию, меняем его на обычный
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+        }
+        let localeID = Locale.preferredLanguages.first // локализация - как в телефоне
+        datePicker.locale = Locale(identifier: localeID!)
+        let toolbar = UIToolbar() // добавляем тулбар
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(doneAction)) // кнопка "готово" на тулбар
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // и пустой пространство, чтобы кнопка оказалась справа
+        toolbar.setItems([flexSpace,doneButton], animated: true)
+        znakEdit.inputAccessoryView = toolbar // добавляем тулбар к полю ввода даты
+    }
+    
+    @objc func doneAction() { // при нажатии кнопки "готово" на тулбаре
+        let formatter = DateFormatter()  // форматируем дату
+        formatter.dateFormat = "dd MMMM" // день месяц
+        let localeID = Locale.preferredLanguages.first // локализация - как в телефоне
+        formatter.locale = Locale(identifier: localeID!)
+        znakEdit.text = formatter.string(from: datePicker.date) // вставляем ее в текстовое поле
+        view.endEditing(true) // убираем пикер
+        let number = znakZodiacModel.getZnakByDate(date: datePicker.date) // узнаем знак Зодиака для выбранной даты
+        showDetail(number: number) // выводит детальный экран о знаке
     }
     
     
@@ -78,9 +94,8 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func onFindButtonClick(_ sender: Any) {
-        getUserDate()
-        let number = znakZodiacModel.getZnakByDate()
-        showDetail(number: number)
+//        let number = znakZodiacModel.getZnakByDate()
+//        showDetail(number: number)
     }
     
 }
