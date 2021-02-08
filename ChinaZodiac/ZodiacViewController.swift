@@ -46,9 +46,7 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
     func showDetail(number: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let detailZodiacViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
-        
         let znak = znakZodiacModel.znakZodiac[number] // получаем элемент массива
-        
         detailZodiacViewController.znak = znak // передаем его на новый экран
         detailZodiacViewController.number = number + 1
         
@@ -63,17 +61,7 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         
         
     @IBAction func onFindButtonClick(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let detailViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
-        
-        let numZnak = 1
-        let znak = znakZodiacModel.znakZodiac[numZnak] // узнаем нужный знак Зодиака
-        detailViewController.znak = znak // передаем его на новый экран
-        detailViewController.number = numZnak + 1
-
-        view.endEditing(true) // убираем клавиатуру
-        znakEdit.text = "" // обнуляем знак в поле ввода
-        navigationController?.pushViewController(detailViewController, animated: true)
+        showDetail(number: 1)
     }
 
 
