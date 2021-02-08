@@ -12,8 +12,6 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
     let datePicker = UIDatePicker() // для ввода даты
     
     @IBOutlet weak var znakEdit: UITextField!
-    @IBOutlet weak var findButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,15 +85,6 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showDetail(number: indexPath.row)
-    }
-    
-    func getUserDate() { // узнаем дату, введенную пользователем
-        
-    }
-    
-    @IBAction func onFindButtonClick(_ sender: Any) {
-//        let number = znakZodiacModel.getZnakByDate()
-//        showDetail(number: number)
     }
     
 }
