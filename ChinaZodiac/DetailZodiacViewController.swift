@@ -15,7 +15,7 @@ class DetailZodiacViewController: UIViewController {
     
     var znak  : String = "" // название знака
     var number: Int = 0 // порядковый номер в списке
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = znak
@@ -31,6 +31,6 @@ class DetailZodiacViewController: UIViewController {
         znakImageView.layer.borderColor = UIColor.blue.cgColor // цвет рамки
         
         dataLabel.text = znakDate[number - 1] // выводим дату для знака
-        }
-        
     }
+    
+}

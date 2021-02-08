@@ -51,7 +51,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         detailViewController.animal = animal // передаем его на новый экран
         detailViewController.number = number
         detailViewController.year = year
-
+        
         view.endEditing(true) // убираем клавиатуру
         yearEdit.text = "" // обнуляем год в поле ввода
         navigationController?.pushViewController(detailViewController, animated: true)
@@ -66,11 +66,11 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     @IBAction func onFindButtonClick(_ sender: Any) { // поиск по году
-
+        
         guard let year = Int(yearEdit.text ?? "") else {return}
         let numAnimal = zodiacModel.getAnimalNumByYear(year: year) // узнаем номер животного для введенного года
         showDetail(number: numAnimal, year: year)
     }
     
-
+    
 }

@@ -21,7 +21,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { // содержимое строк в "барабане"
         return String(zodiacModel.years[row]) // заполняем строки годами
     }
-
+    
     var animal: String = "" // название животного
     var number: Int = 0     // порядковый номер в списке
     var year:   Int = 0     // центральный год на экране
