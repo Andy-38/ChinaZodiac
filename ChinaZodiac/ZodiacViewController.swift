@@ -57,6 +57,7 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             showDetail(number: indexPath.row)
+            
         }
         
         
