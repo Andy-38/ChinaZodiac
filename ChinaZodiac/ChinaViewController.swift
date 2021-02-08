@@ -13,7 +13,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var yearEdit: UITextField!
     @IBOutlet weak var findButton: UIButton!
-    let zodiacModel : ZodiacModel = ZodiacModel() // модель
+    let zodiacModel : ZodiacModel = ZodiacModel() // модель для работы с животными по китайскому календарю
     
     override func viewDidLoad() {
         super.viewDidLoad()
