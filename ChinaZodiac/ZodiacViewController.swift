@@ -62,7 +62,6 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         
     @IBAction func onFindButtonClick(_ sender: Any) {
         showDetail(number: 1)
-        
     }
 
 
