@@ -52,8 +52,6 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         detailZodiacViewController.znak = znak // передаем его на новый экран
         detailZodiacViewController.number = number + 1
         
-        
-
         view.endEditing(true) // убираем клавиатуру
         znakEdit.text = "" // обнуляем знак в поле ввода
         navigationController?.pushViewController(detailZodiacViewController, animated: true)
