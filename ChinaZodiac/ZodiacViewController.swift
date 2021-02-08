@@ -8,31 +8,32 @@
 import UIKit
 
 class ZodiacViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    let znakZodiacModel : ZnakZodiacModel = ZnakZodiacModel() // модель для работы с животными по китайскому календарю
 
     @IBOutlet weak var znakEdit: UITextField!
     @IBOutlet weak var findButton: UIButton!
     
-        let znakZodiac = ["Козерог", "Водолей", "Рыбы", "Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы", "Скорпион", "Стрелец"]
+        
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            navigationItem.title = "Знаки Зодиака"
+            navigationItem.title = znakZodiacModel.name // заголовок экрана
             navigationController?.navigationBar.prefersLargeTitles = true // большие заголовки
         }
         
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return znakZodiac.count // количество элементов массива
+            return znakZodiacModel.znakZodiac.count // количество элементов массива
             // сколько раз вызывается функция следующая
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // заполняем список знаками
             let cell = tableView.dequeueReusableCell(withIdentifier: "ZnakCell", for: indexPath)
-            let znak = znakZodiac[indexPath.row] // получаем элемент массива
+            let znak = znakZodiacModel.znakZodiac[indexPath.row] // получаем элемент массива
             cell.textLabel?.text = znak // заголовок экрана - название знака
             cell.textLabel?.font = UIFont(name: "Palatino", size: 25) // шрифт списка
-            let imageName = "z\(indexPath.row+1).png" // имя картинки - порядковый номер
+            
+            let imageName = znakZodiacModel.getImageName(index: indexPath.row) // путь к картинке знака Зодиака
             let image = UIImage(named: imageName)
             cell.imageView?.image = image
             cell.imageView?.clipsToBounds = true // обрезаем картинку согласно слою Layer
@@ -42,18 +43,22 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
             return cell
         }
         
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-            let detailZodiacViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
-            
-            let znak = znakZodiac[indexPath.row] // получаем элемент массива
-            
-            detailZodiacViewController.znak = znak // передаем его на новый экран
-            detailZodiacViewController.number = indexPath.row + 1
+    func showDetail(number: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let detailZodiacViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
+        
+        let znak = znakZodiacModel.znakZodiac[number] // получаем элемент массива
+        
+        detailZodiacViewController.znak = znak // передаем его на новый экран
+        detailZodiacViewController.number = number + 1
 
-            view.endEditing(true) // убираем клавиатуру
-            znakEdit.text = "" // обнуляем знак в поле ввода
-            navigationController?.pushViewController(detailZodiacViewController, animated: true)
+        view.endEditing(true) // убираем клавиатуру
+        znakEdit.text = "" // обнуляем знак в поле ввода
+        navigationController?.pushViewController(detailZodiacViewController, animated: true)
+    }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            showDetail(number: indexPath.row)
         }
         
         
@@ -62,7 +67,7 @@ class ZodiacViewController: UIViewController, UITableViewDataSource, UITableView
         let detailViewController = storyboard.instantiateViewController(identifier: "MonthDetail") as! DetailZodiacViewController // при нажатии открываем подробный экран
         
         let numZnak = 1
-        let znak = znakZodiac[numZnak] // узнаем нужный знак Зодиака
+        let znak = znakZodiacModel.znakZodiac[numZnak] // узнаем нужный знак Зодиака
         detailViewController.znak = znak // передаем его на новый экран
         detailViewController.number = numZnak + 1
 

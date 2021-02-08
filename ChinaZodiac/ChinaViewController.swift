@@ -42,7 +42,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func showDetail(number: Int, year: Int ) {
+    func showDetail(number: Int, year: Int ) { // отображаем детальную информацию
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
         

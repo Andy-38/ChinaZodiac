@@ -13,6 +13,7 @@
 		A16AEE7725B0851500B20DEF /* ScreenShot03.png in Resources */ = {isa = PBXBuildFile; fileRef = A16AEE7325B0851500B20DEF /* ScreenShot03.png */; };
 		A195FBCC25D10A3E0051B8A4 /* imageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195FBCB25D10A3E0051B8A4 /* imageResize.swift */; };
 		A195FBCF25D10A820051B8A4 /* zodiacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195FBCE25D10A820051B8A4 /* zodiacModel.swift */; };
+		A195FBD225D11DD80051B8A4 /* znakZodiacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195FBD125D11DD80051B8A4 /* znakZodiacModel.swift */; };
 		A1A229EC25A4B40C00CF8B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */; };
 		A1A229EE25A4B40C00CF8B99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */; };
 		A1A229F325A4B40C00CF8B99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A229F125A4B40C00CF8B99 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		A16AEE7325B0851500B20DEF /* ScreenShot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot03.png; sourceTree = "<group>"; };
 		A195FBCB25D10A3E0051B8A4 /* imageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageResize.swift; sourceTree = "<group>"; };
 		A195FBCE25D10A820051B8A4 /* zodiacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zodiacModel.swift; sourceTree = "<group>"; };
+		A195FBD125D11DD80051B8A4 /* znakZodiacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = znakZodiacModel.swift; sourceTree = "<group>"; };
 		A1A229E825A4B40C00CF8B99 /* ChinaZodiac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinaZodiac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				A1D0C8C025A592E200EA4047 /* DetailViewController.swift */,
 				A195FBCB25D10A3E0051B8A4 /* imageResize.swift */,
 				A195FBCE25D10A820051B8A4 /* zodiacModel.swift */,
+				A195FBD125D11DD80051B8A4 /* znakZodiacModel.swift */,
 				A1EE623C25ACC3E10025FFEF /* DetailZodiacViewController.swift */,
 				A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */,
 				A1A229F125A4B40C00CF8B99 /* Main.storyboard */,
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A229EC25A4B40C00CF8B99 /* AppDelegate.swift in Sources */,
+				A195FBD225D11DD80051B8A4 /* znakZodiacModel.swift in Sources */,
 				A1A229EE25A4B40C00CF8B99 /* SceneDelegate.swift in Sources */,
 				A1EE623D25ACC3E10025FFEF /* DetailZodiacViewController.swift in Sources */,
 				A195FBCC25D10A3E0051B8A4 /* imageResize.swift in Sources */,
