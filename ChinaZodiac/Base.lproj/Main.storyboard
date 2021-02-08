@@ -194,15 +194,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-G4-Juz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-G4-Juz">
                                 <rect key="frame" x="0.0" y="78" width="414" height="784"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ZnakCell" id="ay4-03-CEI">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ay4-03-CEI" id="1nL-uI-Whc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -212,13 +212,13 @@
                                     <outlet property="delegate" destination="PG8-Sn-axZ" id="zqd-bQ-BvJ"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите дату или знак из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-8R-8gY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите дату или знак из списка" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-8R-8gY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="34"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-dU-72x">
-                                <rect key="frame" x="389.5" y="44" width="24.5" height="34.5"/>
+                                <rect key="frame" x="389.66666666666669" y="140" width="24.333333333333314" height="34.333333333333343"/>
                                 <state key="normal">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
@@ -232,9 +232,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MmQ-N3-uvP" firstAttribute="trailing" secondItem="A8E-8R-8gY" secondAttribute="trailing" id="0S4-lr-ddz"/>
+                            <constraint firstItem="A8E-8R-8gY" firstAttribute="top" secondItem="MmQ-N3-uvP" secondAttribute="top" id="DwB-1i-w3d"/>
                             <constraint firstItem="eiO-dU-72x" firstAttribute="trailing" secondItem="MmQ-N3-uvP" secondAttribute="trailing" id="E6q-cb-Mer"/>
                             <constraint firstItem="eiO-dU-72x" firstAttribute="top" secondItem="MmQ-N3-uvP" secondAttribute="top" id="UDF-jK-pfW"/>
-                            <constraint firstItem="A8E-8R-8gY" firstAttribute="top" secondItem="MmQ-N3-uvP" secondAttribute="top" id="a5d-kb-E4k"/>
                             <constraint firstItem="HOf-G4-Juz" firstAttribute="leading" secondItem="MmQ-N3-uvP" secondAttribute="leading" id="bwh-BO-7zz"/>
                             <constraint firstItem="HOf-G4-Juz" firstAttribute="top" secondItem="A8E-8R-8gY" secondAttribute="bottom" id="d0t-0o-pCE"/>
                             <constraint firstItem="MmQ-N3-uvP" firstAttribute="trailing" secondItem="HOf-G4-Juz" secondAttribute="trailing" id="djj-QR-jW8"/>

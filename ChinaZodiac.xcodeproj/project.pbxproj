@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10848B125D148E600E67894 /* SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10848B025D148E600E67894 /* SafeIndex.swift */; };
 		A16AEE7425B0851500B20DEF /* ScreenShot04.png in Resources */ = {isa = PBXBuildFile; fileRef = A16AEE7025B0851400B20DEF /* ScreenShot04.png */; };
 		A16AEE7525B0851500B20DEF /* ScreenShot02.png in Resources */ = {isa = PBXBuildFile; fileRef = A16AEE7125B0851400B20DEF /* ScreenShot02.png */; };
 		A16AEE7625B0851500B20DEF /* ScreenShot01.png in Resources */ = {isa = PBXBuildFile; fileRef = A16AEE7225B0851400B20DEF /* ScreenShot01.png */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A10848B025D148E600E67894 /* SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeIndex.swift; sourceTree = "<group>"; };
 		A16AEE7025B0851400B20DEF /* ScreenShot04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot04.png; sourceTree = "<group>"; };
 		A16AEE7125B0851400B20DEF /* ScreenShot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot02.png; sourceTree = "<group>"; };
 		A16AEE7225B0851400B20DEF /* ScreenShot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot01.png; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				A16AEE6F25B084EF00B20DEF /* ScreenShots */,
 				A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */,
+				A10848B025D148E600E67894 /* SafeIndex.swift */,
 				A1A22A0225A4B4AD00CF8B99 /* ChinaViewController.swift */,
 				A1EE623925ACAEB10025FFEF /* ZodiacViewController.swift */,
 				A1D0C8C025A592E200EA4047 /* DetailViewController.swift */,
@@ -184,6 +187,7 @@
 				A1A229EE25A4B40C00CF8B99 /* SceneDelegate.swift in Sources */,
 				A1EE623D25ACC3E10025FFEF /* DetailZodiacViewController.swift in Sources */,
 				A195FBCC25D10A3E0051B8A4 /* imageResize.swift in Sources */,
+				A10848B125D148E600E67894 /* SafeIndex.swift in Sources */,
 				A1EE623A25ACAEB10025FFEF /* ZodiacViewController.swift in Sources */,
 				A1A22A0325A4B4AD00CF8B99 /* ChinaViewController.swift in Sources */,
 				A1D0C8C125A592E200EA4047 /* DetailViewController.swift in Sources */,

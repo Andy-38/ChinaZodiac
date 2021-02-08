@@ -28,7 +28,7 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // заполняем список животными
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
-        let animal = zodiacModel.animalsZodiac[indexPath.row] // получаем элемент массива
+        let animal = zodiacModel.animalsZodiac[safe: indexPath.row] // получаем элемент массива
         cell.textLabel?.text = animal // заголовок экрана - название животного
         cell.textLabel?.font = UIFont(name: "Palatino", size: 25) // шрифт списка
         
@@ -46,9 +46,9 @@ class ChinaViewController: UIViewController, UITableViewDataSource, UITableViewD
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let detailViewController = storyboard.instantiateViewController(identifier: "YearDetail") as! DetailViewController // при нажатии открываем подробный экран
         
-        let animal = zodiacModel.animalsZodiac[number] // получаем элемент массива
+        let animal = zodiacModel.animalsZodiac[safe: number] // получаем элемент массива
         
-        detailViewController.animal = animal // передаем его на новый экран
+        detailViewController.animal = animal ?? ""// передаем его на новый экран
         detailViewController.number = number
         detailViewController.year = year
         
