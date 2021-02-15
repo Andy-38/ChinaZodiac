@@ -89,18 +89,18 @@
 		A1A229EA25A4B40C00CF8B99 /* ChinaZodiac */ = {
 			isa = PBXGroup;
 			children = (
-				A1F5789F25D1A1CE00AD27FA /* ViewControllers */,
-				A16AEE6F25B084EF00B20DEF /* ScreenShots */,
+				A1A229F925A4B40D00CF8B99 /* Info.plist */,
 				A1A229EB25A4B40C00CF8B99 /* AppDelegate.swift */,
-				A10848B025D148E600E67894 /* SafeIndex.swift */,
 				A195FBCB25D10A3E0051B8A4 /* imageResize.swift */,
-				A195FBCE25D10A820051B8A4 /* zodiacModel.swift */,
-				A195FBD125D11DD80051B8A4 /* znakZodiacModel.swift */,
+				A10848B025D148E600E67894 /* SafeIndex.swift */,
 				A1A229ED25A4B40C00CF8B99 /* SceneDelegate.swift */,
-				A1A229F125A4B40C00CF8B99 /* Main.storyboard */,
+				A195FBD125D11DD80051B8A4 /* znakZodiacModel.swift */,
+				A195FBCE25D10A820051B8A4 /* zodiacModel.swift */,
 				A1A229F425A4B40D00CF8B99 /* Assets.xcassets */,
 				A1A229F625A4B40D00CF8B99 /* LaunchScreen.storyboard */,
-				A1A229F925A4B40D00CF8B99 /* Info.plist */,
+				A1A229F125A4B40C00CF8B99 /* Main.storyboard */,
+				A16AEE6F25B084EF00B20DEF /* ScreenShots */,
+				A1F5789F25D1A1CE00AD27FA /* ViewControllers */,
 			);
 			path = ChinaZodiac;
 			sourceTree = "<group>";

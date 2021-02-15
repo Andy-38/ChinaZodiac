@@ -51,15 +51,15 @@ struct ZnakZodiacModel { // работа со знаками Зодиака
         let userDate = calendar.date(from: dateComponents) // пользовательская дата, но год 2016-й для сравнения с интервалами
         
         for i in 0...zodiacInterval.count - 1 {
-        // находим начало интервала даты для знака Зокиака
+            // находим начало интервала даты для знака Зокиака
             dateComponents.month = zodiacInterval[safe: i]?.firstMonth
             dateComponents.day = zodiacInterval[safe: i]?.firstDay
             let firstDate = calendar.date(from: dateComponents)
-        // находим конец интервала даты для знака Зокиака
+            // находим конец интервала даты для знака Зокиака
             dateComponents.month = zodiacInterval[safe: i]?.lastMonth
             dateComponents.day = zodiacInterval[safe: i]?.lastDay
             let lastDate = calendar.date(from: dateComponents)
-        // проверяем попадает ли заданная пользователем дата в интервал
+            // проверяем попадает ли заданная пользователем дата в интервал
             if (userDate! >= firstDate!) && (userDate! <= lastDate!) {
                 num = i // если да, запоминаем номер знака
             }
